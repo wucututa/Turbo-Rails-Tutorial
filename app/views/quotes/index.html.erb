@@ -1,0 +1,15 @@
+<%# app/views/quotes/index.html.erb %>
+
+<main class="container">
+  <div class="header">
+    <h1>Quotes</h1>
+    <%= link_to "New quote", new_quote_path, class: "btn btn--primary" %>
+  </div>
+
+  <%= render @quotes %>
+  <p class="dnm">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, tempora
+    sequi, sed quos quisquam ipsam ad fuga voluptate obcaecati possimus neque?
+    Vitae culpa sint quis. Exercitationem illum nostrum sint. Commodi.
+  </p>
+</main>
