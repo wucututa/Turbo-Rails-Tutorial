@@ -1,13 +1,22 @@
 <%# app/views/quotes/create.turbo_stream.erb %>
+<%= turbo_stream.prepend "quotes", @quote %>
+<%= turbo_stream.update Quote.new, "" %>
+<%= render_turbo_stream_flash_messages %>
 
+
+
+
+
+
+<!-- other way1 -->
+<% if false %>
 <%= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+<% end %>
 
-<!-- other way -->
+<!-- other way2 -->
 <% if false %>
   <%= turbo_stream.prepend "quotes" do %>
     <%= render partial: "quotes/quote", locals: { quote: @quote } %>
   <% end %>
 <% end %>
 
-
-<%= turbo_stream.update Quote.new, "" %>
