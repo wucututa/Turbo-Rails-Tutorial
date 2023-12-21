@@ -3,6 +3,12 @@
 <%= turbo_stream.remove @quote %>
 <%= render_turbo_stream_flash_messages %>
 
+<% unless current_company.quotes.exists? %>
+  <%= turbo_stream.update Quote.new do %>
+    <%= render "quotes/empty_state" %>
+  <% end %>
+<% end %>
+
 
 <!-- # Remove a Turbo Frame -->
 <!-- turbo_stream.remove -->
@@ -17,4 +23,4 @@
 
 <!-- # Replace or update the content of a Turbo Frame -->
 <!-- turbo_stream.update -->
-<!-- turbo_stream.replace -->elp
+<!-- turbo_stream.replace -->
