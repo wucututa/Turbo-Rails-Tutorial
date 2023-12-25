@@ -1,0 +1,9 @@
+<%# app/views/quotes/show.html.erb %>
+
+<%# All the previous code... %>
+
+<%= turbo_frame_tag "line_item_dates" do %>
+  <%= render @line_item_dates, quote: @quote %>
+<% end %>
+
+<%# All the previous code... %>

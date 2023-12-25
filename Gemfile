@@ -21,6 +21,7 @@ group :development, :test do  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do  gem "web-console"
+  gem "byebug"
   gem "rails_live_reload"
 end
 
